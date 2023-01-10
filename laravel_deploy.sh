@@ -27,7 +27,7 @@ sudo yum install -y php-gd php-mbstring php-xml php-dom php-intl php-simplexml
 cd /var/www/html/
 
 composer create-project laravel/laravel:^8.0 larapp
- 
+cd larapp
 # Copy the .env.example file and set the necessary environment variables
 cp .env.example .env
 sed -i 's/DB_DATABASE=homestead/DB_DATABASE=YOUR-DATABASE-NAME/' .env
@@ -85,7 +85,8 @@ http {
         server_name _;
         root /var/www/html/larapp/public;
 
-        add_header X-Frame-Options
+        add_header X-Frame-Options"SAMEORIGIN";
+        add_header X-Content-Type-Options "nosniff";
 # Set up the nginx configuration (continued)
 
 location / {
