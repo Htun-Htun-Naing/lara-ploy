@@ -67,6 +67,7 @@ php artisan key:generate
 # npm run production
 composer install 
 # Set up the nginx configuration
+chmod -R u+w /etc/nginx/
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 cat > /etc/nginx/nginx.conf <<EOL
 user nginx;
