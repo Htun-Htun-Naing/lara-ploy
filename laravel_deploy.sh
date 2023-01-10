@@ -69,7 +69,8 @@ composer install
 # Set up the nginx configuration
 sudo chmod -R u+w /etc/nginx/nginx.conf
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
-sudo cat > /etc/nginx/nginx.conf <<EOL
+
+sudo bash -c 'cat > /etc/nginx/nginx.conf' <<EOL
 user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
