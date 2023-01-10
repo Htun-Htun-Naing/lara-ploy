@@ -60,12 +60,12 @@ sed -i 's/DB_PASSWORD=secret/DB_PASSWORD=YOUR-MYSQL-PASSWORD/' .env
 php artisan key:generate
 
 # Create the database and run migrations
-php artisan migrate
+# php artisan migrate
 
 # Install npm dependencies and build the assets
-npm install
-npm run production
-
+# npm install
+# npm run production
+composer install 
 # Set up the nginx configuration
 sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 cat > /etc/nginx/nginx.conf <<EOL
