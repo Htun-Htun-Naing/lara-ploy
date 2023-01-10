@@ -106,9 +106,9 @@ http {
 
     server {
         listen 80;
-        server_name _;
+        # server_name _;
         root /var/www/html/larapp/public;
-        
+
         index index.php;
 
         add_header X-Frame-Options "SAMEORIGIN";
@@ -136,7 +136,7 @@ EOL
 # Set the correct ownership and permissions
 sudo chown -R nginx:nginx /var/www/html/larapp
 sudo chmod -R 755 /var/www/html/larapp
-
+sudo chmod -R 777 /var/www/html/larapp/storage
 # Start the web server and enable it to start on boot
 sudo service nginx start
 sudo systemctl enable nginx
