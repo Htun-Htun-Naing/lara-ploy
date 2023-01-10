@@ -45,8 +45,9 @@ rm composer-setup.php
 
 sudo mv composer.phar /usr/local/bin/composer
 
+sudo chown -R ec2-user:ec2-user /var/www/html 
+sudo chmod -R 755 /var/www/html 
 cd /var/www/html 
-
 composer create-project laravel/laravel:^8.0 larapp
 cd larapp
 # Copy the .env.example file and set the necessary environment variables
