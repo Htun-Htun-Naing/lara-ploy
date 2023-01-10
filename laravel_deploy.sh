@@ -108,9 +108,11 @@ http {
         listen 80;
         server_name _;
         root /var/www/html/larapp/public;
+        
+        index index.php;
 
-        add_header X-Frame-Options"SAMEORIGIN";
-        add_header X-Content-Type-Options "nosniff";
+        add_header X-Frame-Options "SAMEORIGIN";
+
 # Set up the nginx configuration (continued)
 
 location / {
@@ -126,6 +128,7 @@ location ~ \.php$ {
 
 location ~ /\.(?!well-known).* {
     deny all;
+}
 }
 }
 EOL
